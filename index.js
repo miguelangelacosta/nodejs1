@@ -11,11 +11,13 @@ yargs
     },
   })
   .command({
-    command: "get <id>",
+    command: "get",
     describe: "Get a contact by ID",
     builder: {
       id: {
         describe: "Contact ID",
+        demandOption: true,
+        type: "string", // Tipo de dato cambiado a "string"
       },
     },
     handler: (argv) => {
@@ -28,17 +30,23 @@ yargs
     },
   })
   .command({
-    command: "add <name> <email> <phone>",
+    command: "add",
     describe: "Add a new contact",
     builder: {
       name: {
         describe: "Contact name",
+        demandOption: true,
+        type: "string",
       },
       email: {
         describe: "Contact email",
+        demandOption: true,
+        type: "string",
       },
       phone: {
         describe: "Contact phone",
+        demandOption: true,
+        type: "string",
       },
     },
     handler: (argv) => {
@@ -47,11 +55,13 @@ yargs
     },
   })
   .command({
-    command: "remove <id>",
+    command: "remove",
     describe: "Remove a contact by ID",
     builder: {
       id: {
         describe: "Contact ID",
+        demandOption: true,
+        type: "string", // Tipo de dato cambiado a "string"
       },
     },
     handler: (argv) => {
@@ -61,3 +71,4 @@ yargs
   })
   .demandCommand()
   .help().argv;
+

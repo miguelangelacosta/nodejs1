@@ -22,6 +22,7 @@ function listContacts() {
 
 function getContactById(contactId) {
   const contacts = loadContacts();
+  contactId = contactId.toString(); // Convierte el número en una cadena
   return contacts.find((contact) => contact.id === contactId);
 }
 
